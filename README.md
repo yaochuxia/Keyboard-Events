@@ -4,11 +4,13 @@
 新建js文件，添加控制键盘的js插件
 
 #### 定义Mac command+r 刷新iframe 框架
- 返回false，将屏蔽浏览器默认的command+r快捷事件
+ 返回false，将屏蔽浏览器默认的command+r快捷事件  
+
         hotkeys('command+r', function(){
             console.log('停止刷新!');
             return false
-        })        
+        })  
+                
         hotkeys('command+r',function(event,handler){
             iframe.contentWindow.location.reload() 
         })        
