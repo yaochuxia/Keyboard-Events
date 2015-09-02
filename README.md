@@ -9,12 +9,23 @@
         hotkeys('command+r', function(){
             console.log('停止刷新!');
             return false
-        })  
-                
+        }) 
+
+在iframe框架外面刷新iframe框架   
+               
         hotkeys('command+r',function(event,handler){
-            iframe.contentWindow.location.reload() 
-        })        
-定义s快捷键   
+          var framePage = document.getElementById("ID");
+            framePage.contentWindow.location.reload() 
+        })  
+
+在iframe框架内刷新iframe框架  
+
+      hotkeys('command+r', function(){ console.log('停止刷新!'); return false });
+       hotkeys('command+r', function(event,handler){
+           document.location.reload() 
+       })    
+
+定义s快捷键    
 
        hotkeys('s',function(event,handler){
            if(event.target==='input'){
