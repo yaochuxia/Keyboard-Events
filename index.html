@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyboard-events</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div class="nav">
+<div class="logo">keyboard-events</div>
+<ul><li class="active"><a href="index.html">README</a></li></ul></div>
+<div class="warpper">
+
+    <div class="page-toc">
+        <ul><li><a href="#设置键盘快捷方式">设置键盘快捷方式</a><ul><li><a href="#定义Mac command+r 刷新iframe 框架">定义Mac command+r 刷新iframe 框架</a></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;">&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x5FEB;&#x6377;&#x65B9;&#x5F0F; <a href="#&#x8BBE;&#x7F6E;&#x952E;&#x76D8;&#x5FEB;&#x6377;&#x65B9;&#x5F0F;"> # </a></h1>
+<p>&#x65B0;&#x5EFA;js&#x6587;&#x4EF6;&#xFF0C;&#x6DFB;&#x52A0;&#x63A7;&#x5236;&#x952E;&#x76D8;&#x7684;js&#x63D2;&#x4EF6;</p>
+<h4 id="&#x5B9A;&#x4E49;Mac command+r &#x5237;&#x65B0;iframe &#x6846;&#x67B6;">&#x5B9A;&#x4E49;Mac command+r &#x5237;&#x65B0;iframe &#x6846;&#x67B6; <a href="#&#x5B9A;&#x4E49;Mac command+r &#x5237;&#x65B0;iframe &#x6846;&#x67B6;"> # </a></h4>
+<p> &#x8FD4;&#x56DE;false&#xFF0C;&#x5C06;&#x5C4F;&#x853D;&#x6D4F;&#x89C8;&#x5668;&#x9ED8;&#x8BA4;&#x7684;command+r&#x5FEB;&#x6377;&#x4E8B;&#x4EF6;  </p>
+<pre><code>    hotkeys(&apos;command+r&apos;, function(){
+        console.log(&apos;&#x505C;&#x6B62;&#x5237;&#x65B0;!&apos;);
+        return false
+    }) 
+</code></pre><p>&#x5728;iframe&#x6846;&#x67B6;&#x5916;&#x9762;&#x5237;&#x65B0;iframe&#x6846;&#x67B6;   </p>
+<pre><code>    hotkeys(&apos;command+r&apos;,function(event,handler){
+      var framePage = document.getElementById(&quot;ID&quot;);
+        framePage.contentWindow.location.reload() 
+    })  
+</code></pre><p>&#x5728;iframe&#x6846;&#x67B6;&#x5185;&#x5237;&#x65B0;iframe&#x6846;&#x67B6;  </p>
+<pre><code>  hotkeys(&apos;command+r&apos;, function(){ console.log(&apos;&#x505C;&#x6B62;&#x5237;&#x65B0;!&apos;); return false });
+   hotkeys(&apos;command+r&apos;, function(event,handler){
+       document.location.reload() 
+   })    
+</code></pre><p>&#x5B9A;&#x4E49;s&#x5FEB;&#x6377;&#x952E;    </p>
+<pre><code>   hotkeys(&apos;s&apos;,function(event,handler){
+       if(event.target===&apos;input&apos;){
+          alert(&apos;&#x4F60;&#x5728;&#x8F93;&#x5165;&#x6846;&#x4E2D;&#x6309;&#x4E0B; s!&apos;)
+        }
+       alert(&apos;&#x4F60;&#x6309;&#x4E0B; s!&apos;)
+   })
+</code></pre><p>&#x5B9A;&#x4E49;&#x591A;&#x4E2A;&#x5FEB;&#x6377;&#x952E;   </p>
+<pre><code>   hotkeys(&apos;ctrl+a,ctrl+r,b,f&apos;,function(event,handler){
+       switch(handler.key){
+         case &quot;ctrl+a&quot;:alert(&quot;&#x4F60;&#x6309;&#x4E0B;ctrl+a&quot;);break;
+         case &quot;ctrl+r&quot;:alert(&quot;&#x4F60;&#x6309;&#x4E0B;ctrl+r&quot;);break;
+         case &quot;b&quot;:alert(&quot;&#x4F60;&#x6309;&#x4E0B;b&quot;);break;
+         case &quot;f&quot;:alert(&quot;&#x4F60;&#x6309;&#x4E0B;f&quot;);break;
+        }
+   })
+</code></pre>
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+    
+</div>
+
+
+</body>
+</html>
